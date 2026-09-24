@@ -1,0 +1,13 @@
+{
+  "name": "basis-root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Basis — Bitcoin DCA Tracker (monorepo root scripts)",
+  "scripts": {
+    "dev": "concurrently --names \"frontend,backend\" --prefix-colors \"cyan,yellow\" \"npm run dev --prefix frontend\" \"npm run dev --prefix backend\"",
+    "install:all": "npm install --prefix frontend && npm install --prefix backend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

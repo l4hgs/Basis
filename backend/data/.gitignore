@@ -1,0 +1,4 @@
+# Ignore the SQLite database file — data is local to each environment
+*.db
+*.db-shm
+*.db-wal

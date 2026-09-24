@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* ── Light-theme palette ─────────────────────────────────────────────── */
+  --color-brand-bg-canvas: #F4F5F7;
+  --color-brand-bg-card: #FFFFFF;
+  --color-brand-bg-sidebar: #FFFFFF;
+  --color-brand-bg-input: #F4F5F7;
+  --color-brand-accent: #111827;
+  --color-brand-accent-soft: #E5E7EB;
+  --color-brand-bitcoin: #F7931A;
+  --color-brand-border: #E5E7EB;
+  --color-brand-text-primary: #111827;
+  --color-brand-text-secondary: #6B7280;
+  --color-brand-text-tertiary: #9CA3AF;
+  --color-brand-green: #059669;
+  --color-brand-green-bg: #ECFDF5;
+  --color-brand-green-border: #A7F3D0;
+}
+
+:root {
+  font-family: 'Helvetica', 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #F4F5F7;
+  color: #111827;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #F4F5F7;
+  color: #111827;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Numeric display font (NDot / Space Grotesk inspired) ─────────────── */
+.font-numeric {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Subtle card shadow / lift ────────────────────────────────────────── */
+.card-shadow {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.card-shadow-hover {
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.card-shadow-hover:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+/* ── Accent glow — muted for light theme ──────────────────────────────── */
+.glow-accent {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.glow-accent-btn:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.10);
+}
+
+/* ── Pulse animation (Live indicator) ─────────────────────────────────── */
+.pulse-dot {
+  animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.6);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(5, 150, 105, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(5, 150, 105, 0);
+  }
+}
+
+/* ── Hidden scrollbars (still scrollable) ─────────────────────────────── */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: none;
+}
+
+/* ── Smooth focus ring for inputs ─────────────────────────────────────── */
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #111827 !important;
+  box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.08);
+}
+
+/* Fix native date picker for light theme */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: none;
+  opacity: 0.5;
+}
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 0.8;
+}
+
+/* ── Flip Clock Animation ─────────────────────────────────────────────── */
+@keyframes flipDown {
+  0% { transform: perspective(400px) rotateX(90deg); opacity: 0; transform-origin: top; }
+  100% { transform: perspective(400px) rotateX(0deg); opacity: 1; transform-origin: top; }
+}
+
+.animate-flip-down {
+  animation: flipDown 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  display: inline-block;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
