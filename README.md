@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="frontend/public/basis-logo.png" alt="Basis Logo" width="120" height="120">
+  <img src="frontend/public/basis-logo-white.png" alt="Basis Logo" width="120" height="120">
   
   # Basis - Bitcoin DCA Tracker
 
